@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío de Calidad de Datos</title>
+    <link rel="stylesheet" href="./juego.css">
+</head>
+<body>
+    <div class="container2" id="inicio-container">
+        <h2>Instrucciones del desafío</h2>
+        <ol>
+            <li>Para iniciar el desafío, ingresa tu nombre y cargo en la compañía.</li>
+            <li>En cada pregunta, haz clic una sola vez en el botón "Iniciar Desafío" para comenzar el temporizador.</li>
+            <li>Cada pregunta tiene un tiempo de 15 segundos. Selecciona la respuesta correcta antes de que se agote el tiempo.</li>
+            <li>Por cada pregunta que respondas correctamente, recibirás 10 puntos.</li>
+            <li>Si el tiempo se agota y no has dado una respuesta, se tomará como una respuesta incorrecta.</li>
+        </ol>
+        <h1>Ingrese sus datos</h1>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="cargo" placeholder="Cargo">
+        <button onclick="iniciarJuego()">Comenzar</button>
+    </div>
+
+    <div class="container" id="juego-container" style="display: none;">
+        <h1>Desafío de Calidad de Datos Ditransa</h1>
+        <div id="tablero"></div>
+        <div id="casilla-actual"></div>
+        <button id="boton-desafio" onclick="verDesafio()">Iniciar Desafío</button>
+        <div id="pregunta"></div>
+        <div id="respuestas-container"></div> <!-- Cambiado de select a div para respuestas -->
+        <button id="verificarRespuesta" onclick="verificarRespuesta()" disabled>Enviar Respuesta</button>
+        <div id="resultado"></div>
+        <div id="tiempo-restante"></div>
+        <div id="puntuacion-container">Puntuación: <span id="puntuacion-usuario">0 puntos</span></div>
+    </div>
+
+    <div class="container" id="finalizacion-container" style="display: none;">
+        <h1>¡Desafío Completado!</h1>
+        <div id="mensaje-final"></div>
+    </div>
+
+    <script src="./juego.js"></script>
+</body>
+</html>
